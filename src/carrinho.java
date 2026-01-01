@@ -6,6 +6,15 @@ public class carrinho {
     private double valorDesconto=0.85;
     private double valorComDesconto;
 
+    public void adicionar(itemVenda obj){
+        if(carrinho.existe(obj.getNome())){
+            return;
+        }
+        carrinho.add(obj);
+    }
+    public void remover(itemVenda obj){
+        carrinho.remove(obj);
+    }
     public double getValorComDesconto() {
         return valorComDesconto;
     }
@@ -21,5 +30,9 @@ public class carrinho {
             valorTotal+=item.getPreco();
         }
         return valorTotal;
+    }
+    public boolean existe(String nome){
+        boolean verificador= carrinho.stream().anyMatch(itemVenda->itemVenda.getNome().equals(nome));
+        return verificador;
     }
 }

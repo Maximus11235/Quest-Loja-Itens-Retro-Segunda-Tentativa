@@ -1,5 +1,3 @@
-
-
 public class itemVenda{
     private String nome;
     private String preco;
@@ -14,18 +12,11 @@ public class itemVenda{
     public String getNome() {
         return nome;
     }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
     public double getPreco() {
-        double var= Float.parseFloat(preco);
-        return var;
+        return Float.parseFloat(preco);
     }
     public String getPrecoStr() {
         return preco;
-    }
-    public void setPreco(String preco) {
-        this.preco = preco;
     }
     public String getImagempath() {
         return imagempath;
@@ -33,8 +24,12 @@ public class itemVenda{
     public void setImagempath(String imagempath) {
         this.imagempath = imagempath;
     }
-    
-    
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public void setPreco(String preco) {
+        this.preco = preco;
+    }
 
     
 
