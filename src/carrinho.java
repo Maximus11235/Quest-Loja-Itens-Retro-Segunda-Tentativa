@@ -22,5 +22,4 @@ public class carrinho {
         }
         return valorTotal;
     }
-    public void converter(String )
 }

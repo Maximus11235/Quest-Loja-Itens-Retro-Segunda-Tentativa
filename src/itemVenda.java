@@ -17,7 +17,11 @@ public class itemVenda{
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getPreco() {
+    public double getPreco() {
+        double var= Float.parseFloat(preco);
+        return var;
+    }
+    public String getPrecoStr() {
         return preco;
     }
     public void setPreco(String preco) {
