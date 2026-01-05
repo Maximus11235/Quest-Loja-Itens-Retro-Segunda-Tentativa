@@ -1,38 +1,42 @@
 import java.util.ArrayList;
 
 public class carrinho {
+    /*Funções:
+    - adiciona instâncias de venda
+    - remove instâncias de venda
+    - calcula o valor total
+    - calcula o valor total com desconto */
     private ArrayList<itemVenda> carrinho= new ArrayList<>();
     private double valorTotal;
-    private double valorDesconto=0.85;
-    private double valorComDesconto;
+    private final double valorDesconto=0.85;
 
+    
     public void adicionar(itemVenda obj){
-        if(carrinho.existe(obj.getNome())){
+        if(carrinho.stream().anyMatch(itemVenda->itemVenda.getNome().equals(obj.getNome()))){
             return;
         }
-        carrinho.add(obj);
+        else{
+            carrinho.add(obj);
+        }
     }
     public void remover(itemVenda obj){
         carrinho.remove(obj);
     }
-    public double getValorComDesconto() {
-        return valorComDesconto;
-    }
-    public void setValorComDesconto(){
-        valorComDesconto= getValortotal()*valorDesconto;
+    public double getValorComDesconto(){
+        if(getValorTotal()>150){
+            return getValorTotal()*valorDesconto;
+        }
+        return getValorTotal();
     }
     public void setValorTotal() {
-        this.valorTotal = getValortotal();
+        this.valorTotal = getValorTotal();
     }
-    public double getValortotal(){
+    public double getValorTotal(){
         valorTotal=0;
         for(itemVenda item : carrinho){
             valorTotal+=item.getPreco();
         }
         return valorTotal;
     }
-    public boolean existe(String nome){
-        boolean verificador= carrinho.stream().anyMatch(itemVenda->itemVenda.getNome().equals(nome));
-        return verificador;
-    }
+    
 }
