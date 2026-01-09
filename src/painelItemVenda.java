@@ -1,33 +1,34 @@
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.*;
+
+    /*esse é o construtor das instancias de itens a serem adicionados no carrinho */
 public class painelItemVenda extends JPanel{
     private itemVenda item;
-    private carrinho carrinho;
-
+    private carrinho car;
     
-    public painelItemVenda(itemVenda item){
+    public painelItemVenda(itemVenda item, carrinho carrinho){
         this.item= item;
+        this.car= carrinho;
+        ImageIcon imagemOriginal=new ImageIcon(getClass().getResource(item.getImagempath()));
+        Image imagemMaior= imagemOriginal.getImage();
+        Image imagemMenor=imagemMaior.getScaledInstance(100,140,Image.SCALE_SMOOTH);
+        ImageIcon iconeR= new ImageIcon(imagemMenor);
+        JLabel imagem= new JLabel(iconeR);
         
-        ImageIcon icone=new ImageIcon(getClass().getResource(item.getImagempath()));
-        Image imagemR=icone.getImage().getScaledInstance(120,240,Image.SCALE_REPLICATE);
-        ImageIcon iconeR=new ImageIcon(imagemR);
-
         JLabel nome= new JLabel(item.getNome());
         JLabel valor= new JLabel("R$"+ item.getPrecoStr());
-        JLabel imagem= new JLabel(iconeR);
         JButton adicionarButton= new JButton("adicionarButton");
-
+        
         adicionarButton.addActionListener(e->{
-            carrinho.adicionar(item);
+            car.adicionar(item);
         });
+        
         add(nome);
         add(valor);
         add(imagem);
         add(adicionarButton);
-
+        
     }
 
     
