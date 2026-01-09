@@ -10,6 +10,7 @@ public class painelItemVenda extends JPanel{
     public painelItemVenda(itemVenda item, carrinho carrinho){
         this.item= item;
         this.car= carrinho;
+        
         ImageIcon imagemOriginal=new ImageIcon(getClass().getResource(item.getImagempath()));
         Image imagemMaior= imagemOriginal.getImage();
         Image imagemMenor=imagemMaior.getScaledInstance(100,140,Image.SCALE_SMOOTH);
