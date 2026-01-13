@@ -1,10 +1,11 @@
-public class itemVenda{
+package logica;
+    public class itemVenda{
     private String nome;
     private String preco;
     private String imagempath;
     /*Função do arquivo itemVenda:
     - gerenciar os atributos de cada item que aparecerá, incluindo nome, imagem e preço*/
-public itemVenda(String nome, String preco, String imagempath) {
+    public itemVenda(String nome, String preco, String imagempath) {
         this.nome = nome;
         this.preco = preco;
         this.imagempath = imagempath;

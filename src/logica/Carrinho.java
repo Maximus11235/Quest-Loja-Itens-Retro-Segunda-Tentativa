@@ -1,6 +1,7 @@
+package logica;
 import java.util.ArrayList;
 
-public class carrinho {
+public class Carrinho {
     /*Funções:
     - adiciona instâncias de venda
     - remove instâncias de venda
