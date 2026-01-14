@@ -1,18 +1,37 @@
-## Getting Started
+<pre><span data-redactor-tag="span" data-verified="redactor" data-redactor-style="color: #000000;" style="color: rgb(0, 0, 0);"># [Empório Brilhante]
+## Descrição
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+[O projeto tem como objetivo testar as habilidades com swing. Consiste em uma aba de loja de jogos retrô contendo 3 itens, seus respectivos preços e possui um total sem desconto e um total com desconto aplicado]
 
-## Folder Structure
+## Funcionalidades
 
-The workspace contains two folders by default, where:
+- Adicionar ao carrinho
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- Remover do carrinho
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Tecnologias
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+- Java
 
-## Dependency Management
+- Swing
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Características
+
+[o carrinho permite adicionar somente um item de cada;
+o item foi feito de forma que podem ser adicionados mais itens dentro do painel de acordo com o gosto]
+
+## Como Executar
+
+1. Clone o repositório
+
+2. Abra na sua IDE
+
+3. Execute a classe principal
+
+## Autor
+
+[Maximus Rosa do Nascimento]
+
+Curso: Java Quest</span>
+
+</pre>
