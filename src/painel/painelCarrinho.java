@@ -21,18 +21,20 @@ public class painelCarrinho extends JPanel{
         exibirTotal= new JTextField(""+car.getValorTotal());
         exibirTotalDesconto= new JTextField(""+car.getValorComDesconto());
         exibirTotal.setEditable(false);
-        exibirTotal.setEditable(false);
+        exibirTotalDesconto.setEditable(false);
+        exibirTotal.setColumns(8);
+        exibirTotalDesconto.setColumns(8);
 
-        nomeTotal= new JLabel("Valor Total R$:");
-        nomeTotalDesconto= new JLabel("Valor com Desconto R$:");
+        nomeTotal= new JLabel("                Valor Total R$: ");
+        nomeTotalDesconto= new JLabel("Valor com Desconto R$: ");
 
         JPanel painelTotal=new JPanel();
-        painelTotal.setLayout(new BoxLayout(painelTotal,BoxLayout.Y_AXIS));
+        painelTotal.setLayout(new BoxLayout(painelTotal,BoxLayout.X_AXIS));
         painelTotal.add(nomeTotal);
         painelTotal.add(exibirTotal);
 
         JPanel painelDesconto=new JPanel();
-        painelDesconto.setLayout(new BoxLayout(painelDesconto,BoxLayout.Y_AXIS));
+        painelDesconto.setLayout(new BoxLayout(painelDesconto,BoxLayout.X_AXIS));
         painelDesconto.add(nomeTotalDesconto);
         painelDesconto.add(exibirTotalDesconto);
 

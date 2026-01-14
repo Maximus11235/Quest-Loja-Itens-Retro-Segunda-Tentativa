@@ -1,5 +1,6 @@
 package painel;
 import java.awt.BorderLayout;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
@@ -15,23 +16,27 @@ public class telaPrincipal extends JFrame {
     public telaPrincipal(listaPainelItem itens, Carrinho carrinho){
         setTitle("Loja");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(900,600);
+        setSize(600,400);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
-
+        setResizable(false);
         
         JPanel painelItem= new JPanel();
         painelItem.setLayout(new GridLayout(1,3));
-
-        painelCarrinho painel2= new painelCarrinho(carrinho);
         
+        JPanel painelCarro= new JPanel();
+        painelCarro.setLayout(new GridBagLayout());
+        painelCarrinho painel2= new painelCarrinho(carrinho);
+        painelCarro.add(painel2);
+
         for(itemVenda item : itens.getLista()){
             painelItemVenda painel = new painelItemVenda(item, carrinho, painel2);
             painelItem.add(painel);
         }
-
+        
         add(painelItem, BorderLayout.NORTH);
-        add(painel2, BorderLayout.CENTER);
+        add(painelCarro, BorderLayout.CENTER);
+        
 
         setVisible(true);
     }

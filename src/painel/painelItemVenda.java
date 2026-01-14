@@ -26,9 +26,14 @@ import java.awt.*;
             JLabel nome= new JLabel(item.getNome());
             JLabel valor= new JLabel("R$"+ item.getPrecoStr());
             JButton adicionarButton= new JButton("adicionar");
-
+            JButton excluirButton= new JButton("excluir");
+            
             adicionarButton.addActionListener(e->{
                 car.adicionar(item);
+                p.atualizarValores();
+            });
+            excluirButton.addActionListener(e->{
+                car.remover(item);
                 p.atualizarValores();
             });
 
@@ -36,11 +41,13 @@ import java.awt.*;
             imagem.setAlignmentX(Component.CENTER_ALIGNMENT);
             valor.setAlignmentX(Component.CENTER_ALIGNMENT);
             adicionarButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+            excluirButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 
             add(nome);
             add(imagem);
             add(valor);
             add(adicionarButton);
+            add(excluirButton);
     }
     
         public itemVenda getItem() {
